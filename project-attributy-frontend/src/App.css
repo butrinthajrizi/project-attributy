@@ -80,6 +80,9 @@ main .mission-select{
     justify-items: center;
     gap: 10px;
 }
+#name, #message{
+    width: 400px;
+}
 .comment-form label{
     display: grid;
     place-items: center;
@@ -94,4 +97,27 @@ main .mission-select{
     background-color: lightblue;
     color: black;
     padding: 5px;
+}
+.sent-comments{
+    margin-top: 20px;
+    padding: 0px 20px;
+    border: 1px solid grey;
+    width: 400px;
+}
+.sent-comments p {
+    color: lightblue;
+}
+.sent-comments-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+.sent-comments .sent-comments-name p{
+    color: lightgreen;
+}
+.delete-button{
+    width: 60px;
+    height: 20px;
+    text-align: center;
 }

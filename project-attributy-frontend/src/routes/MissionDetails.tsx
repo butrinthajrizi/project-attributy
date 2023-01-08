@@ -80,13 +80,17 @@ export default function MissionDetails() {
           }}
         >
           <h2>Comment Section</h2>
-          <label>Name: <input type="text" name="name" placeholder="Your name..." required /></label>
-          <label>Comment: <textarea
-            name="message"
-            placeholder="Leave your comment..."
-            required
-            rows={5}
-          />
+          <label>Name: 
+            <input type="text" id="name" name="name" placeholder="Your name..." required />
+          </label>
+          <label>Comment: 
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Leave your comment..."
+              required
+              rows={5}
+            />
           </label>
           <button>Submit</button>
         </form>
@@ -95,25 +99,27 @@ export default function MissionDetails() {
               .filter((comment) => comment.missionId === mission.flight_number)
               .reverse()
               .map((comment) => (
-                <div className="posted-comments" key={comment.id}>
-                  <p>{comment.name}</p>
+                <div className="sent-comments" key={comment.id}>
+                  <div className="sent-comments-name">
+                    <p>{comment.name}</p>
+                    <button
+                      className="delete-button"
+                      onClick={() => {
+                        fetch(`http://localhost:4000/comments/${comment.id}`, {
+                          method: "DELETE",
+                        }).then(() => {
+                          fetch(`http://localhost:4000/comments/`)
+                            .then((res) => res.json())
+                            .then((data) => {
+                              setComments(data);
+                            });
+                        });
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
                   <p>{comment.message}</p>
-                  <p
-                    className="delete-button"
-                    onClick={() => {
-                      fetch(`http://localhost:4000/comments/${comment.id}`, {
-                        method: "DELETE",
-                      }).then(() => {
-                        fetch(`http://localhost:4000/comments/`)
-                          .then((res) => res.json())
-                          .then((data) => {
-                            setComments(data);
-                          });
-                      });
-                    }}
-                  >
-                    ❌
-                  </p>
                 </div>
               ))}
         </div>
