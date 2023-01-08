@@ -52,6 +52,7 @@ export default function MissionDetails() {
           {mission?.details}
         </p>
       </aside>
+
       <aside className="right-side">
         <form
           className="comment-form"
@@ -63,8 +64,9 @@ export default function MissionDetails() {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
+                name: e.target.name.value,
                 message: e.target.message.value,
-                missionId: mission?.flight_number,
+                missionId: mission.flight_number,
               }),
             })
               .then((res) => res.json())
@@ -78,22 +80,24 @@ export default function MissionDetails() {
           }}
         >
           <h2>Comment Section</h2>
-          <input type="text" name="name" placeholder="Your name..." required />
-          <textarea
+          <label>Name: <input type="text" name="name" placeholder="Your name..." required /></label>
+          <label>Comment: <textarea
             name="message"
             placeholder="Leave your comment..."
             required
             rows={5}
           />
+          </label>
           <button>Submit</button>
         </form>
         <div>
         {comments
-              .filter((comment) => comment.missionId === mission?.flight_number)
+              .filter((comment) => comment.missionId === mission.flight_number)
               .reverse()
               .map((comment) => (
                 <div className="posted-comments" key={comment.id}>
-                  <p>{comment.content}</p>
+                  <p>{comment.name}</p>
+                  <p>{comment.message}</p>
                   <p
                     className="delete-button"
                     onClick={() => {

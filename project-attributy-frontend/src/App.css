@@ -72,4 +72,26 @@ main .mission-select{
 
 .right-side{
     padding: 10px;
+    width: 1fr;
+}
+
+.comment-form{
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+}
+.comment-form label{
+    display: grid;
+    place-items: center;
+    color: lightblue;
+    gap: 5px;
+}
+.comment-form h2{
+    color: lightblue;
+}
+.comment-form button{
+    border: none;
+    background-color: lightblue;
+    color: black;
+    padding: 5px;
 }
