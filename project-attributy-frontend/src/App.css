@@ -57,6 +57,7 @@ main .mission-select{
 
 .main-details{
     display: grid;
+    grid-auto-flow: column;
     justify-content: space-between;
     padding: 20px;
 }
@@ -65,5 +66,10 @@ main .mission-select{
     display: grid;
     justify-items: center;
     gap: 10px;
-    width: 700px;
+    border-right: 1px solid white;
+    padding: 10px;
+}
+
+.right-side{
+    padding: 10px;
 }
