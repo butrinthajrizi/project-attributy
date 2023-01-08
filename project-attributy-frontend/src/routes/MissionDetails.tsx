@@ -32,6 +32,10 @@ export default function MissionDetails() {
 
 
   return (
-    <div>MissionDetails</div>
+    <main>
+      <aside className='left-side'>
+          
+      </aside>
+    </main>
   )
 }
