@@ -19,9 +19,10 @@ app.get("/comments", async (req, res) => {
 
 app.post("/comments", async (req, res) => {
   try{
-  const { missionId, message } = req.body;
+  const { missionId, message, name } = req.body;
   const newComment = await prisma.comment.create({
     data: {
+        name,
       message,
       missionId: Number(missionId),
     },
