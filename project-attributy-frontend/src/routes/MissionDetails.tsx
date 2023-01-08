@@ -32,9 +32,16 @@ export default function MissionDetails() {
 
 
   return (
-    <main>
+    <main className='main-details'>
       <aside className='left-side'>
-          
+          <h1>{mission?.mission_name}</h1>
+          <img src={mission?.links.mission_patch} width="500px"/>
+          <h4>{mission?.launch_site.site_name_long}</h4>
+          <p>{mission?.rocket.rocket_name}</p>
+          <p>{mission?.details}</p>
+      </aside>
+      <aside className='right-side'>
+
       </aside>
     </main>
   )

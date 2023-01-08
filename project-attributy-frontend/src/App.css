@@ -54,3 +54,16 @@ main .mission-select{
     color: white;
     cursor: pointer;
 }
+
+.main-details{
+    display: grid;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-side{
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    width: 700px;
+}

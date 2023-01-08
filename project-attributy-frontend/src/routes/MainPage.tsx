@@ -20,7 +20,7 @@ function Home() {
         {missions.map((mission) => 
         <li className='main-mission-list-item'>
           <img className='mission-image' src={mission.links.mission_patch} width={150}/>
-          <button className='mission-button'>{mission.mission_name} →</button>
+          <Link to={`/missions/${mission.flight_number}`}><button className='mission-button'>{mission.mission_name} →</button></Link>
         </li>
         )}
       </ul>
