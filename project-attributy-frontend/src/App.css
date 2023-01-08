@@ -1,0 +1,56 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    background-color: #121726;
+}
+.route-names{
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.route-names-item{
+    text-decoration: none;
+    color: lightblue;
+    font-weight: bold;
+}
+
+main{
+    padding: 20px;
+    background-color: #222a35;
+}
+
+main .mission-select{
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-mission-list{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+}
+
+.main-mission-list-item{
+    display: grid;
+    width: 200px;
+    border: 1px solid grey;
+    gap: 20px;
+}
+.main-mission-list-item img{
+    background-color: black;
+    width: 100%;
+}
+.main-mission-list-item button{
+    margin: 20px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+}
